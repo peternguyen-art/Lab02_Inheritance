@@ -1,6 +1,6 @@
 public class SalaryWorker extends Worker {
 
-    private double annualSalary;
+    private double annualSalary = 0.0;
 
     /**
      * Construction for SalaryWorker class
@@ -10,11 +10,10 @@ public class SalaryWorker extends Worker {
      * @param firstName     The worker's first name.
      * @param title         The worker's title (e.g., "Mr.", "Ms.").
      * @param YOB           The worker's year of birth.
-     * @param hourlyPayRate The worker's hourly pay rate.
      * @param annualSalary  The worker's annual salary.
      */
-    public SalaryWorker(String IDNum, String lastName, String firstName, String title, int YOB, double hourlyPayRate, double annualSalary) {
-        super(IDNum, lastName, firstName, title, YOB, hourlyPayRate);
+    public SalaryWorker(String IDNum, String lastName, String firstName, String title, int YOB, double annualSalary) {
+        super(IDNum, lastName, firstName, title, YOB, 0.0);
         this.annualSalary = annualSalary;
     }
 
@@ -36,11 +35,11 @@ public class SalaryWorker extends Worker {
 
     @Override
     public String toXML() {
-        return super.toXML() + ", " + this.annualSalary;
+        return super.toXML() + ", " + "<annualSalary>" + this.annualSalary + "</annualSalary>";
     }
 
     @Override
     public String toJSON(){
-        return super.toJSON() + ", " + this.annualSalary;
+        return super.toJSON() + ", " + "\"annualSalary\": " + this.annualSalary + "}";
     }
 }

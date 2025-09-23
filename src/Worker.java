@@ -75,7 +75,7 @@ public class Worker extends Person {
          */
         @Override
         public String toCSV () {
-            return super.toCSV() + "," + this.hourlyPayRate;
+            return super.toCSV() + ", " + this.hourlyPayRate;
         }
 
         /**
@@ -84,8 +84,8 @@ public class Worker extends Person {
          */
         @Override
         public String toXML () {
-            return "<Worker>" + super.toXML().replace("</Person>", "") +
-                    "<hourlyPayRate>" + this.hourlyPayRate + "</hourlyPayRate></Person></Worker>";
+            return "<Worker>" + super.toXML().replace("</Person>", "</Worker>") +
+                    "<hourlyPayRate>" + this.hourlyPayRate + "</hourlyPayRate></Worker>";
         }
 
         /**
