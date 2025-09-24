@@ -2,11 +2,11 @@ import java.util.Calendar;
 import java.util.Objects;
 
 public class Person {
-    private String ID;
-    private String firstName;
-    private String lastName;
-    private String title;
-    private int YOB;
+    public String ID;
+    public String firstName;
+    public String lastName;
+    public String title;
+    public int YOB;
 
     /**
      * Constructs a new Person object.

@@ -11,8 +11,8 @@ public class Worker extends Person {
      * @param YOB           The worker's year of birth.
      * @param hourlyPayRate The worker's hourly pay rate.
      */
-    public Worker(String IDNum, String lastName, String firstName, String title, int YOB, double hourlyPayRate) {
-        super(IDNum, lastName, firstName, title, YOB);
+    public Worker(String IDNum, String firstName, String lastName, String title, int YOB, double hourlyPayRate) {
+        super(IDNum, firstName, lastName, title, YOB);
         this.hourlyPayRate = hourlyPayRate;
     }
 
@@ -84,8 +84,7 @@ public class Worker extends Person {
          */
         @Override
         public String toXML () {
-            return "<Worker>" + super.toXML().replace("</Person>", "</Worker>") +
-                    "<hourlyPayRate>" + this.hourlyPayRate + "</hourlyPayRate></Worker>";
+            return super.toXML().replaceAll("Person", "Worker");
         }
 
         /**

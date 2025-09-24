@@ -12,8 +12,8 @@ public class SalaryWorker extends Worker {
      * @param YOB           The worker's year of birth.
      * @param annualSalary  The worker's annual salary.
      */
-    public SalaryWorker(String IDNum, String lastName, String firstName, String title, int YOB, double annualSalary) {
-        super(IDNum, lastName, firstName, title, YOB, 0.0);
+    public SalaryWorker(String IDNum, String firstName, String lastName, String title, int YOB, double annualSalary) {
+        super(IDNum, firstName, lastName, title, YOB, 0.0);
         this.annualSalary = annualSalary;
     }
 
@@ -35,7 +35,14 @@ public class SalaryWorker extends Worker {
 
     @Override
     public String toXML() {
-        return super.toXML() + ", " + "<annualSalary>" + this.annualSalary + "</annualSalary>";
+        return "<Worker>" +
+                "<IDNum>" + ID + "</IDNum>" +
+                "<firstName>" + firstName + "</firstName>" +
+                "<lastName>" + lastName + "</lastName>" +
+                "<title>" + title + "</title>" +
+                "<YOB>" + YOB + "</YOB>" +
+                "<annualSalary>" + this.annualSalary + "</annualSalary>" +
+                "</Worker>";
     }
 
     @Override

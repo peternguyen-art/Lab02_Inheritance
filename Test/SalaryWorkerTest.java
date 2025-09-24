@@ -8,7 +8,7 @@ public class SalaryWorkerTest {
     private SalaryWorker peteNguyen;
     @BeforeEach
     public void setUp() {
-        peteNguyen = new SalaryWorker("00000A", "Nguyen", "Peter", "Mr.",2004, 470000.0);
+        peteNguyen = new SalaryWorker("00000A", "Peter", "Nguyen", "Mr.",2004, 470000.0);
     }
 
     @Test
@@ -25,14 +25,14 @@ public class SalaryWorkerTest {
 
     @Test
     void toCSV() {
-        String expectedCSV = "00000A, Nguyen, Peter, Mr., 2004, 0.0, 470000.0";
+        String expectedCSV = "00000A, Peter, Nguyen, Mr., 2004, 0.0, 470000.0";
         assertEquals(expectedCSV, peteNguyen.toCSV());
     }
 
     @Test
     void toXML() {
         String expectedXML = "<Worker>" +
-                "<ID>00000A</ID>" +
+                "<IDNum>00000A</IDNum>" +
                 "<firstName>Peter</firstName>" +
                 "<lastName>Nguyen</lastName>" +
                 "<title>Mr.</title>" +
